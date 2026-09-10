@@ -187,7 +187,37 @@ Nenhuma convenção de commits, branches ou tags deve ser presumida quando não 
 
 ---
 
-## 9. Segurança e responsabilidade
+## 9. Deploy e publicação do site institucional
+
+O site institucional da AllLogic é um projeto Astro com saída estática. A publicação em produção deve utilizar o procedimento homologado abaixo, salvo alteração posterior devidamente documentada.
+
+Ambiente de produção:
+
+- Domínio: `alllogiconline.com.br`
+- Servidor: `177.104.163.165`
+- Usuário de publicação: `alllogiconline`
+- Porta SSH: `21008`
+- Diretório da aplicação: `/home2/alllogiconline/`
+- Diretório público: `/home2/alllogiconline/public_html/`
+- Diretório de backups: `/home2/alllogiconline/backups/`
+
+Procedimento de publicação:
+
+1. Executar o build do projeto.
+2. Gerar o pacote estático:
+   `tar -czf /tmp/alllogiconline-dist.tar.gz -C dist .`
+3. Enviar o pacote para `/home2/alllogiconline/` utilizando `scp` pela porta SSH `21008`.
+4. Antes de substituir a versão publicada, criar um backup completo de `public_html` em `/home2/alllogiconline/backups/`, utilizando nome com data e hora.
+5. Remover da publicação os artefatos da versão anterior que serão substituídos pelo novo build.
+6. Extrair o pacote em `/home2/alllogiconline/public_html/`.
+7. Validar a presença das principais páginas e verificar as respostas HTTP da produção.
+8. Em caso de falha de publicação, utilizar o backup correspondente para rollback.
+
+O procedimento deve preservar arquivos ou diretórios de produção que não façam parte dos artefatos substituídos pelo build.
+
+---
+
+## 10. Segurança e responsabilidade
 
 O Agente de IA deve tratar informações, credenciais, chaves, configurações e dados potencialmente sensíveis com cuidado.
 
@@ -197,7 +227,7 @@ Alterações de infraestrutura, segurança, produção ou dados devem ser realiz
 
 ---
 
-## 10. Estrutura da AllLogic
+## 11. Estrutura da AllLogic
 
 A raiz física da organização é:
 
@@ -240,7 +270,7 @@ Os projetos permanecem independentes entre si, mesmo estando organizados sob a m
 
 ---
 
-## 11. Marca e comunicação
+## 12. Marca e comunicação
 
 A identidade visual e o posicionamento institucional da AllLogic devem ser preservados.
 
@@ -260,7 +290,7 @@ O logotipo oficial da AllLogic e demais elementos de identidade visual aprovados
 
 ---
 
-## 12. Portfólio e soluções
+## 13. Portfólio e soluções
 
 O portfólio oficial de soluções e serviços deve ser consultado no SGA, especialmente em:
 
@@ -270,7 +300,7 @@ A classificação e as descrições oficiais do portfólio devem ser obtidas do 
 
 ---
 
-## 13. Projetos e repositórios
+## 14. Projetos e repositórios
 
 Cada projeto ou repositório pode possuir documentação própria para explicar seu contexto, arquitetura, funcionamento, decisões e procedimentos específicos.
 
@@ -286,7 +316,7 @@ A documentação específica de um projeto ou repositório não deve duplicar as
 
 ---
 
-## 14. Framework 3L
+## 15. Framework 3L
 
 O `FOUNDATION.md` reconhece o Framework 3L como o modelo de gestão, engenharia e desenvolvimento adotado pela AllLogic.
 
@@ -300,7 +330,7 @@ As decisões devem seguir os princípios, valores e código de ética estabeleci
 
 ---
 
-## 15. Documento vivo
+## 16. Documento vivo
 
 Este `AGENTS.md` é um documento vivo.
 
