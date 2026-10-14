@@ -2,3 +2,16 @@
 /SGA/
 /Site/
 /Projetos/
+
+# Credenciais, Chaves de API e Segredos locais
+.secrets/
+api-*
+cookies.txt
+*.env*
+*.key
+*.pem
+
+# Editor e Ambiente local
+.vscode/
+.DS_Store
+Thumbs.db

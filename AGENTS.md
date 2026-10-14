@@ -8,7 +8,9 @@ Ele fornece o contexto geral necessário para localizar informações, compreend
 
 Este documento não substitui documentos de autoridade da AllLogic. Quando existir uma fonte específica e homologada para determinado assunto, ela deverá ser consultada e prevalecerá sobre este arquivo.
 
-Este é o único `AGENTS.md` da estrutura da AllLogic. Instruções gerais para Agentes de IA devem permanecer centralizadas neste documento.
+Este é o `AGENTS.md` Pai da estrutura da AllLogic. As instruções gerais para Agentes de IA permanecem centralizadas neste documento.
+
+Projetos e repositórios podem possuir um `AGENTS.md` próprio para registrar contexto, regras, decisões e orientações específicas. Esses documentos são subordinados a este `AGENTS.md` Pai e não devem duplicar suas instruções gerais.
 
 ---
 
@@ -187,33 +189,18 @@ Nenhuma convenção de commits, branches ou tags deve ser presumida quando não 
 
 ---
 
-## 9. Deploy e publicação do site institucional
+## 9. Deploy e publicação
 
-O site institucional da AllLogic é um projeto Astro com saída estática. A publicação em produção deve utilizar o procedimento homologado abaixo, salvo alteração posterior devidamente documentada.
+Cada projeto deve utilizar o procedimento de publicação definido em sua documentação específica e no MOA aplicável.
 
-Ambiente de produção:
+Regras gerais:
 
-- Domínio: `alllogiconline.com.br`
-- Servidor: `177.104.163.165`
-- Usuário de publicação: `alllogiconline`
-- Porta SSH: `21008`
-- Diretório da aplicação: `/home2/alllogiconline/`
-- Diretório público: `/home2/alllogiconline/public_html/`
-- Diretório de backups: `/home2/alllogiconline/backups/`
-
-Procedimento de publicação:
-
-1. Executar o build do projeto.
-2. Gerar o pacote estático:
-   `tar -czf /tmp/alllogiconline-dist.tar.gz -C dist .`
-3. Enviar o pacote para `/home2/alllogiconline/` utilizando `scp` pela porta SSH `21008`.
-4. Antes de substituir a versão publicada, criar um backup completo de `public_html` em `/home2/alllogiconline/backups/`, utilizando nome com data e hora.
-5. Remover da publicação os artefatos da versão anterior que serão substituídos pelo novo build.
-6. Extrair o pacote em `/home2/alllogiconline/public_html/`.
-7. Validar a presença das principais páginas e verificar as respostas HTTP da produção.
-8. Em caso de falha de publicação, utilizar o backup correspondente para rollback.
-
-O procedimento deve preservar arquivos ou diretórios de produção que não façam parte dos artefatos substituídos pelo build.
+- Parâmetros específicos de infraestrutura, como domínios, servidores, portas, usuários, diretórios e caminhos de publicação, devem permanecer na documentação do projeto correspondente.
+- Procedimentos operacionais específicos devem permanecer documentados no MOA ou na documentação técnica apropriada do projeto.
+- Publicações devem ser executadas somente dentro do escopo autorizado e conforme procedimento documentado.
+- Antes de substituir uma versão em produção, devem ser observados os mecanismos de backup e rollback definidos para o projeto.
+- Arquivos ou diretórios de produção que não façam parte dos artefatos da nova versão devem ser preservados.
+- Alterações de infraestrutura ou publicação não devem ser realizadas por inferência; quando a documentação aplicável estiver ausente ou conflitante, a inconsistência deve ser registrada e resolvida antes da alteração.
 
 ---
 
@@ -300,23 +287,49 @@ A classificação e as descrições oficiais do portfólio devem ser obtidas do 
 
 ---
 
-## 14. Projetos e repositórios
+## 14. Inicialização de trabalho em projetos
+
+O `~/AllLogic/AGENTS.md` é o ponto de entrada geral para qualquer trabalho realizado dentro da estrutura da AllLogic.
+
+Ao iniciar um trabalho em um projeto ou repositório, o Agente de IA deve seguir esta sequência:
+
+1. Ler e considerar este `~/AllLogic/AGENTS.md`.
+2. Consultar o `~/AllLogic/SGA/FOUNDATION.md`, que estabelece a autoridade institucional da AllLogic.
+3. Identificar o projeto ou repositório que será trabalhado.
+4. Localizar e ler o `AGENTS.md` específico do projeto ou repositório, quando existir.
+5. Ler o `FOUNDATION.md` do próprio projeto, quando existir.
+6. Ler o `README.md` do próprio projeto.
+7. Ler os documentos adicionais indicados pelo `AGENTS.md` específico do projeto e necessários para a tarefa.
+8. Verificar o estado atual do repositório antes de realizar alterações.
+9. Aplicar o fluxo geral de trabalho da AllLogic e as regras específicas do projeto.
+
+O `AGENTS.md` específico do projeto deve funcionar como guia de contexto e orientação para aquele projeto. Ele deve indicar onde estão as informações especializadas necessárias para trabalhar corretamente, sem duplicar as regras gerais deste documento.
+
+### Recuperação de conhecimento e pendências
+
+Informações importantes não devem permanecer exclusivamente na memória da interação entre IA e humano.
+
+Decisões, regras, procedimentos, pendências e conhecimento relevante devem ser registrados no documento versionado apropriado.
+
+Antes de iniciar uma nova etapa relevante de um projeto, o Agente de IA deve consultar a documentação aplicável e verificar pendências conhecidas relacionadas à tarefa.
+
+Uma pendência registrada deve permanecer rastreável até sua resolução, alteração formal ou encerramento documentado.
+
+---
+
+## 15. Projetos e repositórios
 
 Cada projeto ou repositório pode possuir documentação própria para explicar seu contexto, arquitetura, funcionamento, decisões e procedimentos específicos.
 
-Antes de atuar em um projeto ou repositório, o Agente de IA deve:
+A documentação específica de um projeto ou repositório deve ser consultada conforme a sequência de inicialização definida na seção anterior.
 
-1. Consultar o `FOUNDATION.md`, se existir.
-2. Consultar o `README.md`.
-3. Consultar a documentação específica disponível.
-4. Verificar o estado atual do repositório.
-5. Seguir as regras e decisões documentadas para aquele projeto ou repositório, sempre respeitando as diretrizes gerais estabelecidas no `~/AllLogic/AGENTS.md`.
+As regras e decisões específicas do projeto devem ser respeitadas sempre em conjunto com as diretrizes gerais estabelecidas no `~/AllLogic/AGENTS.md`.
 
 A documentação específica de um projeto ou repositório não deve duplicar as instruções gerais deste documento.
 
 ---
 
-## 15. Framework 3L
+## 16. Framework 3L
 
 O `FOUNDATION.md` reconhece o Framework 3L como o modelo de gestão, engenharia e desenvolvimento adotado pela AllLogic.
 
@@ -330,11 +343,15 @@ As decisões devem seguir os princípios, valores e código de ética estabeleci
 
 ---
 
-## 16. Documento vivo
+## 17. Documento vivo
 
 Este `AGENTS.md` é um documento vivo.
 
 Ele poderá evoluir conforme a organização da AllLogic, seus processos, projetos e documentação sejam oficialmente definidos.
+
+### Pendências estruturais
+
+- **Deploy do Site institucional:** as instruções e parâmetros específicos de publicação atualmente presentes neste documento devem ser migrados para `~/AllLogic/Site/AGENTS.md`, deixando no AGENTS Pai somente as regras gerais aplicáveis à publicação e infraestrutura. A migração deve preservar os dados homologados e ser validada antes da remoção da seção específica deste documento.
 
 Alterações devem ser baseadas em informações aprovadas ou em documentos de autoridade da AllLogic.
 
@@ -342,8 +359,22 @@ Este arquivo não deve ser utilizado para criar novas regras institucionais sem 
 
 ---
 
-## Referências principais
+## 18. Referências principais
 
 - `SGA/FOUNDATION.md` — Fundamentos institucionais da AllLogic.
 - `SGA/README.md` — Estrutura e funcionamento do SGA.
 - `SGA/06-Comercial/portfolio/PORTFOLIO.md` — Portfólio oficial de soluções e serviços.
+
+## 19. Método de execução e escolha de ferramentas
+
+Antes de executar uma operação, a IA deve escolher previamente o método mais robusto e adequado ao tipo de tarefa.
+
+Regras permanentes:
+
+- Evitar comandos excessivamente longos ou frágeis para execução por colagem no terminal.
+- Para criar ou editar arquivos, utilizar o mecanismo mais confiável disponível para a operação.
+- Quando uma operação longa precisar ser executada no terminal, dividi-la em etapas pequenas e determinísticas sempre que isso aumentar a confiabilidade.
+- Validar o resultado após a execução como confirmação da operação, e não como substituto da escolha de um método adequado.
+- Se uma abordagem apresentar falha, não repetir tentativas equivalentes quando existir uma alternativa tecnicamente mais robusta.
+- Evitar tentativa e erro desnecessários, retrabalho e consumo de tempo causado por métodos de execução inadequados.
+- Esta regra se aplica a toda IA, a todo projeto, a todo repositório e a toda operação realizada sob as normas da AllLogic.
