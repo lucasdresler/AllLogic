@@ -2,13 +2,13 @@
 
 ## Objetivo
 
-Este documento orienta qualquer Agente de Inteligência Artificial autorizado a trabalhar dentro da estrutura da AllLogic.
+Este documento orienta qualquer Agente de Inteligência Artificial autorizado a trabalhar dentro da estrutura da AllLogic Online.
 
-Ele fornece o contexto geral necessário para localizar informações, compreender a organização da empresa e atuar de forma coerente com os princípios, processos e decisões da AllLogic.
+Ele fornece o contexto geral necessário para localizar informações, compreender a organização da empresa e atuar de forma coerente com os princípios, processos e decisões da AllLogic Online.
 
-Este documento não substitui documentos de autoridade da AllLogic. Quando existir uma fonte específica e homologada para determinado assunto, ela deverá ser consultada e prevalecerá sobre este arquivo.
+Este documento não substitui documentos de autoridade da AllLogic Online. Quando existir uma fonte específica e homologada para determinado assunto, ela deverá ser consultada e prevalecerá sobre este arquivo.
 
-Este é o `AGENTS.md` Pai da estrutura da AllLogic. As instruções gerais para Agentes de IA permanecem centralizadas neste documento.
+Este é o `AGENTS.md` Pai da estrutura da AllLogic Online. As instruções gerais para Agentes de IA permanecem centralizadas neste documento.
 
 Projetos e repositórios podem possuir um `AGENTS.md` próprio para registrar contexto, regras, decisões e orientações específicas. Esses documentos são subordinados a este `AGENTS.md` Pai e não devem duplicar suas instruções gerais.
 
@@ -117,6 +117,16 @@ Decisões que envolvam conteúdo institucional ou estratégico ainda não homolo
 
 Toda alteração institucional ou estratégica deve ser rastreável a uma instrução ou fonte aprovada pelo fundador.
 
+### Regra de autorização prévia para alterações
+
+O Agente de IA não está autorizado a realizar alterações diretamente no código, banco de dados, templates ou arquivos de projeto sem aviso e consentimento prévios do fundador.
+
+Diante de qualquer solicitação de ajuste, correção, melhoria ou nova funcionalidade:
+
+1. **Analisar e diagnosticar** o cenário;
+2. **Apresentar a proposta / sugestão detalhada** ao fundador (explicando exatamente o que será alterado, a justificativa e o impacto esperado);
+3. **Aguardar a autorização expressa** do fundador antes de aplicar qualquer alteração física nos arquivos do workspace.
+
 ---
 ## 5. Hierarquia de informações
 
@@ -214,7 +224,7 @@ Alterações de infraestrutura, segurança, produção ou dados devem ser realiz
 
 ---
 
-## 11. Estrutura da AllLogic
+## 11. Estrutura da AllLogic Online
 
 A raiz física da organização é:
 
@@ -224,8 +234,8 @@ A estrutura principal é:
 
 - `AGENTS.md` — único documento geral de instruções para Agentes de IA.
 - `SGA/` — Sistema de Gestão AllLogic.
-- `Site/` — projeto do site institucional.
-- `Projetos/` — projetos e soluções da AllLogic.
+- `Site/` — projeto do site institucional da AllLogic Online.
+- `Projetos/` — projetos e soluções da AllLogic Online.
 
 ### SGA
 
@@ -239,19 +249,22 @@ Seu objetivo é preservar o conhecimento da organização, padronizar processos,
 
 `~/AllLogic/Site/`
 
-Contém o projeto do site institucional da AllLogic.
+Contém o projeto do site institucional da AllLogic Online (Projeto Atlas), publicado em `https://alllogiconline.com.br/`.
 
 ### Projetos
 
 `~/AllLogic/Projetos/`
 
-Contém os projetos e soluções da AllLogic.
+Contém os projetos e soluções da AllLogic Online.
 
 Projetos atualmente organizados neste diretório:
 
-- `app-agendamento/`
-- `ofertaia/`
-- `contabilidade-cm-de-carvalho/`
+- `matriz-saas/` — Plataforma e motor SaaS unificado (Agillex Hub, Atendimento, Agenda, CRM Kanban, Agillex Pay e Checkout).
+- `agillex-atendimento/` — Solução e automações do Agillex Atendimento com Inteligência Artificial humanizada no WhatsApp.
+- `app-agendamento/` — Aplicação base de agendamento online (integrada ao ecossistema Agillex).
+- `ofertaia/` — Solução de geração e gestão de ofertas com Inteligência Artificial.
+- `contabilidade-cm-de-carvalho/` — Projeto de solução web para cliente contábil.
+- `alllogic-ai-office/`, `benchmark-agentes/`, `escola-sabatina-online/` — Ambientes internos, estudos e projetos próprios da organização.
 
 Os projetos permanecem independentes entre si, mesmo estando organizados sob a mesma raiz física.
 
@@ -259,15 +272,15 @@ Os projetos permanecem independentes entre si, mesmo estando organizados sob a m
 
 ## 12. Marca e comunicação
 
-A identidade visual e o posicionamento institucional da AllLogic devem ser preservados.
+A identidade visual e o posicionamento institucional da AllLogic Online devem ser preservados.
 
 Informações oficiais sobre identidade e posicionamento devem ser obtidas a partir das fontes institucionais homologadas.
 
-O logotipo oficial da AllLogic e demais elementos de identidade visual aprovados devem ser utilizados sem alterações de proporção, cores, tipografia ou estilo, salvo quando houver decisão explícita de redesign.
+O logotipo oficial da AllLogic Online e demais elementos de identidade visual aprovados devem ser utilizados sem alterações de proporção, cores, tipografia ou estilo, salvo quando houver decisão explícita de redesign.
 
 ### Informações de marca atualmente homologadas
 
-**Empresa:** AllLogic
+**Empresa:** AllLogic Online
 
 **Descritor oficial:** Engenharia de Soluções Digitais
 
@@ -284,6 +297,14 @@ O portfólio oficial de soluções e serviços deve ser consultado no SGA, espec
 `SGA/06-Comercial/portfolio/PORTFOLIO.md`
 
 A classificação e as descrições oficiais do portfólio devem ser obtidas do documento do SGA e não reconstruídas por inferência.
+
+### Família Agillex de Soluções Digitais
+
+As principais soluções comerciais ativas da AllLogic Online integram a Família Agillex:
+
+- **Agillex Hub:** Plataforma Unificada de Gestão Operacional, Atendimento IA 24/7 no WhatsApp, Agendamento Online Sincronizado, Funil CRM Kanban e Cobrança Integrada Pix/Cartão via Asaas com Taxa Fixa de R$ 1,99.
+- **Agillex Agenda:** Sistema de Agendamento Online Sincronizado com Google Calendar, página pública exclusiva 24/7, lembretes automáticos via WhatsApp e redução de até 85% em no-shows.
+- **Agillex Atendimento:** Atendente Inteligente com IA humanizada no WhatsApp Oficial 24/7, compreensão de mensagens de áudio e texto, resposta contextual com base RAG e transbordo humano em 1 clique.
 
 ---
 
