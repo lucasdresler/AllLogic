@@ -117,15 +117,18 @@ Decisões que envolvam conteúdo institucional ou estratégico ainda não homolo
 
 Toda alteração institucional ou estratégica deve ser rastreável a uma instrução ou fonte aprovada pelo fundador.
 
-### Regra de autorização prévia para alterações
+### Regra de autorização prévia para alterações e deploy
 
-O Agente de IA não está autorizado a realizar alterações diretamente no código, banco de dados, templates ou arquivos de projeto sem aviso e consentimento prévios do fundador.
+O Agente de IA não está autorizado a realizar alterações diretamente no código, banco de dados, templates ou arquivos de projeto sem aviso e consentimento prévios do fundador. Da mesma forma, **nenhum deploy remoto para produção** poderá ser executado sem homologação explícita prévia dos testes locais.
 
-Diante de qualquer solicitação de ajuste, correção, melhoria ou nova funcionalidade:
+Diante de qualquer solicitação de ajuste, correção, melhoria ou nova funcionalidade, o Agente de IA deve seguir estritamente o ciclo de 4 etapas:
 
-1. **Analisar e diagnosticar** o cenário;
-2. **Apresentar a proposta / sugestão detalhada** ao fundador (explicando exatamente o que será alterado, a justificativa e o impacto esperado);
-3. **Aguardar a autorização expressa** do fundador antes de aplicar qualquer alteração física nos arquivos do workspace.
+1. **Diagnóstico e Proposta:** Analisar o cenário e apresentar a proposta detalhada (o que será alterado, justificativa e impacto), aguardando aprovação para editar os arquivos locais.
+2. **Implementação e Teste Local:** Aplicar as alterações estritamente no ambiente local e executar os testes/validações locais.
+3. **Apresentação de Evidências e Parada Obrigatória:** Apresentar os resultados, logs e evidências do teste local ao fundador e formular obrigatoriamente a pergunta:
+   > *"Testes locais validados com sucesso. Autoriza a publicação em produção?"*
+   O agente deve **interromper a execução** neste ponto e aguardar a resposta humana. Fica terminantemente proibido executar `git push` ou conexões SSH com o servidor antes desta autorização.
+4. **Deploy Autorizado:** Somente após o "Sim / Autorizado" expresso do fundador, proceder com o commit, envio ao repositório remoto e deploy no servidor de produção.
 
 ---
 ## 5. Hierarquia de informações
@@ -260,7 +263,7 @@ Contém os projetos e soluções da AllLogic Online.
 Projetos atualmente organizados neste diretório:
 
 - `matriz-saas/` — Plataforma e motor SaaS unificado (Agillex Hub, Atendimento, Agenda, CRM Kanban, Agillex Pay e Checkout).
-- `agillex-atendimento/` — Solução e automações do Agillex Atendimento com Inteligência Artificial humanizada no WhatsApp.
+- `agillex-atendimento/` — Solução e automações do Agilex Atende com Inteligência Artificial humanizada no WhatsApp.
 - `app-agendamento/` — Aplicação base de agendamento online (integrada ao ecossistema Agillex).
 - `ofertaia/` — Solução de geração e gestão de ofertas com Inteligência Artificial.
 - `contabilidade-cm-de-carvalho/` — Projeto de solução web para cliente contábil.
@@ -304,7 +307,7 @@ As principais soluções comerciais ativas da AllLogic Online integram a Famíli
 
 - **Agillex Hub:** Plataforma Unificada de Gestão Operacional, Atendimento IA 24/7 no WhatsApp, Agendamento Online Sincronizado, Funil CRM Kanban e Cobrança Integrada Pix/Cartão via Asaas com Taxa Fixa de R$ 1,99.
 - **Agillex Agenda:** Sistema de Agendamento Online Sincronizado com Google Calendar, página pública exclusiva 24/7, lembretes automáticos via WhatsApp e redução de até 85% em no-shows.
-- **Agillex Atendimento:** Atendente Inteligente com IA humanizada no WhatsApp Oficial 24/7, compreensão de mensagens de áudio e texto, resposta contextual com base RAG e transbordo humano em 1 clique.
+- **Agilex Atende:** Atendente Inteligente com IA humanizada no WhatsApp Oficial 24/7, compreensão de mensagens de áudio e texto, resposta contextual com base RAG e transbordo humano em 1 clique.
 
 ---
 
