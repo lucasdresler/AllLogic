@@ -117,18 +117,19 @@ Decisões que envolvam conteúdo institucional ou estratégico ainda não homolo
 
 Toda alteração institucional ou estratégica deve ser rastreável a uma instrução ou fonte aprovada pelo fundador.
 
-### Regra de autorização prévia para alterações e deploy
+### Regra de autonomia local e autorização prévia para deploy em produção
 
-O Agente de IA não está autorizado a realizar alterações diretamente no código, banco de dados, templates ou arquivos de projeto sem aviso e consentimento prévios do fundador. Da mesma forma, **nenhum deploy remoto para produção** poderá ser executado sem homologação explícita prévia dos testes locais.
+O Agente de IA possui plena autonomia para diagnosticar, criar, editar arquivos, templates, scripts e executar testes no ambiente local sem necessidade de interromper o fluxo para confirmações intermediárias.
 
-Diante de qualquer solicitação de ajuste, correção, melhoria ou nova funcionalidade, o Agente de IA deve seguir estritamente o ciclo de 4 etapas:
+No entanto, **nenhum deploy remoto para produção** poderá ser executado sem homologação explícita prévia dos testes locais.
 
-1. **Diagnóstico e Proposta:** Analisar o cenário e apresentar a proposta detalhada (o que será alterado, justificativa e impacto), aguardando aprovação para editar os arquivos locais.
-2. **Implementação e Teste Local:** Aplicar as alterações estritamente no ambiente local e executar os testes/validações locais.
-3. **Apresentação de Evidências e Parada Obrigatória:** Apresentar os resultados, logs e evidências do teste local ao fundador e formular obrigatoriamente a pergunta:
+Diante de solicitações de ajuste, melhoria, correção ou nova funcionalidade:
+
+1. **Desenvolvimento e Teste Local:** O Agente atua com autonomia para implementar a solução e executar as validações e testes em ambiente local.
+2. **Apresentação de Evidências e Parada Obrigatória:** Apresentar os resultados, logs e evidências do teste local ao fundador e formular obrigatoriamente a pergunta:
    > *"Testes locais validados com sucesso. Autoriza a publicação em produção?"*
-   O agente deve **interromper a execução** neste ponto e aguardar a resposta humana. Fica terminantemente proibido executar `git push` ou conexões SSH com o servidor antes desta autorização.
-4. **Deploy Autorizado:** Somente após o "Sim / Autorizado" expresso do fundador, proceder com o commit, envio ao repositório remoto e deploy no servidor de produção.
+   O agente deve **interromper a execução** neste ponto e aguardar a resposta humana. Fica terminantemente proibido executar `git push` ou comandos de publicação no servidor remoto antes desta autorização.
+3. **Deploy Autorizado:** Somente após o "Sim / Autorizado" expresso do fundador, proceder com o commit, envio ao repositório remoto e deploy no servidor de produção.
 
 ---
 ## 5. Hierarquia de informações
