@@ -117,19 +117,18 @@ Decisões que envolvam conteúdo institucional ou estratégico ainda não homolo
 
 Toda alteração institucional ou estratégica deve ser rastreável a uma instrução ou fonte aprovada pelo fundador.
 
-### Regra de autonomia local e autorização prévia para deploy em produção
+### Regra de autonomia técnica, validação de testes e autorização para deploy
 
-O Agente de IA possui plena autonomia para diagnosticar, criar, editar arquivos, templates, scripts e executar testes no ambiente local sem necessidade de interromper o fluxo para confirmações intermediárias.
+O Agente de IA possui plena autonomia para diagnosticar, criar, editar arquivos, templates, scripts e executar testes no ambiente local.
 
-No entanto, **nenhum deploy remoto para produção** poderá ser executado sem homologação explícita prévia dos testes locais.
+Quando todos os testes locais automatizados e validações técnicas forem executados e **passarem com 100% de sucesso**, o Agente de IA está **previamente autorizado a publicar em produção**, devendo observar rigorosamente:
 
-Diante de solicitações de ajuste, melhoria, correção ou nova funcionalidade:
+1. **Desenvolvimento e Teste Local Conclusivo:** Implementar e validar a solução localmente, garantindo ausência de erros de sintaxe, regressões funcionais ou quebras visuais.
+2. **Segurança Operacional, Backup e Rollback:** Observar as regras da empresa para preservação de dados, garantia de backup e mecanismos de rollback imediato caso ocorra imprevisto remoto.
+3. **Deploy em Produção:** Executar o versionamento e a publicação no servidor remoto conforme os parâmetros, portas e rotinas homologados do projeto específico.
+4. **Validação Pós-Deploy e Relatório de Evidências:** Testar a resposta remota em produção (verificação HTTP, entrega de assets atualizados e integridade) e apresentar ao fundador o relatório conclusivo com os testes realizados, evidências e resultados finais.
 
-1. **Desenvolvimento e Teste Local:** O Agente atua com autonomia para implementar a solução e executar as validações e testes em ambiente local.
-2. **Apresentação de Evidências e Parada Obrigatória:** Apresentar os resultados, logs e evidências do teste local ao fundador e formular obrigatoriamente a pergunta:
-   > *"Testes locais validados com sucesso. Autoriza a publicação em produção?"*
-   O agente deve **interromper a execução** neste ponto e aguardar a resposta humana. Fica terminantemente proibido executar `git push` ou comandos de publicação no servidor remoto antes desta autorização.
-3. **Deploy Autorizado:** Somente após o "Sim / Autorizado" expresso do fundador, proceder com o commit, envio ao repositório remoto e deploy no servidor de produção.
+Se qualquer teste local falhar, o deploy permanece bloqueado até a resolução completa da falha.
 
 ---
 ## 5. Hierarquia de informações
