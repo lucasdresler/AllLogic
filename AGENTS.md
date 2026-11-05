@@ -315,6 +315,8 @@ As principais soluções comerciais ativas da AllLogic Online integram a Famíli
 - **Agillex Hub:** Plataforma Unificada de Gestão Operacional, Atendimento IA 24/7 no WhatsApp, Agendamento Online Sincronizado, Funil CRM Kanban e Cobrança Integrada Pix/Cartão via Asaas com Taxa Fixa de R$ 1,99.
 - **Agillex Agenda:** Sistema de Agendamento Online Sincronizado com Google Calendar, página pública exclusiva 24/7, lembretes automáticos via WhatsApp e redução de até 85% em no-shows.
 - **Agilex Atende:** Atendente Inteligente com IA humanizada no WhatsApp Oficial 24/7, compreensão de mensagens de áudio e texto, resposta contextual com base RAG e transbordo humano em 1 clique.
+- **Agillex Cobrança:** Régua Inteligente de Cobrança e Notificação Ativa no WhatsApp integrada ao Asaas, com Pix Copia e Cola, aviso preventivo, cobrança no vencimento e recuperação amigável de inadimplência.
+- **Agillex Reputação:** Acelerador de Avaliações 5 estrelas no Google Meu Negócio pós-atendimento/serviço, filtro de satisfação para proteção de marca e respostas automáticas humanizadas com IA para SEO local.
 
 ---
 
