@@ -119,7 +119,7 @@ Toda alteração institucional ou estratégica deve ser rastreável a uma instru
 
 ### Regra de autonomia técnica, portão de aprovação para commit e deploy
 
-O Agente de IA possui plena autonomia para diagnosticar, criar, editar arquivos, templates, scripts e executar testes no ambiente local.
+O Agente de IA possui plena autonomia para diagnosticar, ler documentos, inspecionar o ambiente, criar, editar arquivos, templates, scripts e executar testes no ambiente local, sem necessidade de solicitar autorização prévia para operações de leitura ou validação técnica.
 
 Porém, **antes de criar qualquer commit (`git commit`), publicar no repositório remoto (`git push`) ou executar qualquer procedimento de deploy em produção**, o Agente de IA deve obrigatoriamente:
 
@@ -128,11 +128,24 @@ Porém, **antes de criar qualquer commit (`git commit`), publicar no repositóri
    - Os objetivos atendidos;
    - Os arquivos modificados ou criados;
    - Os resultados das validações e testes executados;
-   - As evidências de funcionamento.
+   - As evidências de funcionamento;
+   - As ações subsequentes propostas (ex.: commit, push, deploy).
 3. **Solicitação Explícita de Autorização:** Formular expressamente a consulta de autorização antes de qualquer ação no controle de versão ou no ambiente remoto.
 4. **Parada Obrigatória de Execução:** Pausar a execução e aguardar a resposta do fundador. Fica terminantemente proibido realizar commits, `git push` ou deploys em produção sem a autorização prévia e expressa do fundador.
 
 Se qualquer teste local falhar, o avanço permanece bloqueado até a resolução completa da falha.
+
+### Autorização abrangente e simplificação do fluxo
+
+Quando o fundador conceder a autorização para uma proposta (por exemplo, autorizando implementar uma melhoria, comitar e realizar o deploy), **essa autorização é válida para todas as etapas expressamente inseridas no escopo autorizado**.
+
+Nesse cenário:
+- O Agente de IA **não deve pedir autorizações intermediárias** para etapas que já constavam da autorização geral (como pedir nova permissão apenas para rodar `git commit`, `git push` ou enviar os arquivos de deploy já autorizados).
+- A execução deve prosseguir de forma contínua e autônoma até a entrega completa das etapas aprovadas.
+- O Agente de IA deve pausar a execução e consultar o fundador apenas quando:
+  - Ocorrer um erro impeditivo ou falha imprevista;
+  - Houver necessidade de tomar uma decisão fora do escopo aprovado;
+  - Todas as etapas forem concluídas, momento em que apresentará o resumo final e as evidências de sucesso ao fundador.
 
 ---
 ## 5. Hierarquia de informações
