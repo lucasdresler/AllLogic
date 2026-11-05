@@ -117,18 +117,22 @@ Decisões que envolvam conteúdo institucional ou estratégico ainda não homolo
 
 Toda alteração institucional ou estratégica deve ser rastreável a uma instrução ou fonte aprovada pelo fundador.
 
-### Regra de autonomia técnica, validação de testes e autorização para deploy
+### Regra de autonomia técnica, portão de aprovação para commit e deploy
 
 O Agente de IA possui plena autonomia para diagnosticar, criar, editar arquivos, templates, scripts e executar testes no ambiente local.
 
-Quando todos os testes locais automatizados e validações técnicas forem executados e **passarem com 100% de sucesso**, o Agente de IA está **previamente autorizado a publicar em produção**, devendo observar rigorosamente:
+Porém, **antes de criar qualquer commit (`git commit`), publicar no repositório remoto (`git push`) ou executar qualquer procedimento de deploy em produção**, o Agente de IA deve obrigatoriamente:
 
-1. **Desenvolvimento e Teste Local Conclusivo:** Implementar e validar a solução localmente, garantindo ausência de erros de sintaxe, regressões funcionais ou quebras visuais.
-2. **Segurança Operacional, Backup e Rollback:** Observar as regras da empresa para preservação de dados, garantia de backup e mecanismos de rollback imediato caso ocorra imprevisto remoto.
-3. **Deploy em Produção:** Executar o versionamento e a publicação no servidor remoto conforme os parâmetros, portas e rotinas homologados do projeto específico.
-4. **Validação Pós-Deploy e Relatório de Evidências:** Testar a resposta remota em produção (verificação HTTP, entrega de assets atualizados e integridade) e apresentar ao fundador o relatório conclusivo com os testes realizados, evidências e resultados finais.
+1. **Desenvolvimento e Teste Local Conclusivo:** Concluir a implementação e validar 100% da solução no ambiente local ou de testes (garantindo ausência de erros de sintaxe, regressões funcionais ou quebras visuais).
+2. **Apresentação de Resumo:** Apresentar ao fundador um resumo claro, conciso e estruturado contendo:
+   - Os objetivos atendidos;
+   - Os arquivos modificados ou criados;
+   - Os resultados das validações e testes executados;
+   - As evidências de funcionamento.
+3. **Solicitação Explícita de Autorização:** Formular expressamente a consulta de autorização antes de qualquer ação no controle de versão ou no ambiente remoto.
+4. **Parada Obrigatória de Execução:** Pausar a execução e aguardar a resposta do fundador. Fica terminantemente proibido realizar commits, `git push` ou deploys em produção sem a autorização prévia e expressa do fundador.
 
-Se qualquer teste local falhar, o deploy permanece bloqueado até a resolução completa da falha.
+Se qualquer teste local falhar, o avanço permanece bloqueado até a resolução completa da falha.
 
 ---
 ## 5. Hierarquia de informações
@@ -200,6 +204,8 @@ Alterações locais existentes não devem ser descartadas sem autorização ou n
 
 Nenhuma convenção de commits, branches ou tags deve ser presumida quando não estiver homologada ou explicitamente definida para a tarefa ou repositório.
 
+Antes de realizar `git commit` ou `git push`, a IA deve obrigatoriamente apresentar um resumo das alterações ao fundador e obter autorização expressa para prosseguir.
+
 ---
 
 ## 9. Deploy e publicação
@@ -208,6 +214,7 @@ Cada projeto deve utilizar o procedimento de publicação definido em sua docume
 
 Regras gerais:
 
+- Nenhuma publicação ou deploy em produção deve ser executada sem a apresentação prévia do resumo das mudanças e a autorização explícita do fundador.
 - Parâmetros específicos de infraestrutura, como domínios, servidores, portas, usuários, diretórios e caminhos de publicação, devem permanecer na documentação do projeto correspondente.
 - Procedimentos operacionais específicos devem permanecer documentados no MOA ou na documentação técnica apropriada do projeto.
 - Publicações devem ser executadas somente dentro do escopo autorizado e conforme procedimento documentado.
