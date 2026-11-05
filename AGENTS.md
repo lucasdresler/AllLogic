@@ -285,9 +285,11 @@ Projetos atualmente organizados neste diretório:
 - `matriz-saas/` — Plataforma e motor SaaS unificado (Agillex Hub, Atendimento, Agenda, CRM Kanban, Agillex Pay e Checkout).
 - `agillex-atendimento/` — Solução e automações do Agilex Atende com Inteligência Artificial humanizada no WhatsApp.
 - `app-agendamento/` — Aplicação base de agendamento online (integrada ao ecossistema Agillex).
+- `agillex-cobranca/` — Sistema de notificação ativa e régua inteligente de cobrança via WhatsApp integrada ao gateway Asaas.
+- `agillex-reputacao/` — Acelerador de avaliações 5 estrelas no Google Meu Negócio pós-atendimento com filtro protetor de satisfação e respostas com IA.
 - `ofertaia/` — Solução de geração e gestão de ofertas com Inteligência Artificial.
 - `contabilidade-cm-de-carvalho/` — Projeto de solução web para cliente contábil.
-- `alllogic-ai-office/`, `benchmark-agentes/`, `escola-sabatina-online/` — Ambientes internos, estudos e projetos próprios da organização.
+- `alllogic-ai-office/`, `benchmark-agentes/`, `escola-sabatina-online/`, `cupido-adventista/`, `prospeccao-google-maps/` — Ambientes internos, estudos e projetos próprios da organização.
 
 Os projetos permanecem independentes entre si, mesmo estando organizados sob a mesma raiz física.
 
