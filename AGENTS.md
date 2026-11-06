@@ -117,35 +117,20 @@ Decisões que envolvam conteúdo institucional ou estratégico ainda não homolo
 
 Toda alteração institucional ou estratégica deve ser rastreável a uma instrução ou fonte aprovada pelo fundador.
 
-### Regra de autonomia técnica, portão de aprovação para commit e deploy
+### Regra de autonomia técnica e fluxo de execução contínua
 
-O Agente de IA possui plena autonomia para diagnosticar, ler documentos, inspecionar o ambiente, criar, editar arquivos, templates, scripts e executar testes no ambiente local, sem necessidade de solicitar autorização prévia para operações de leitura ou validação técnica.
+Para garantir agilidade e evitar interrupções desnecessárias ao fundador, o Agente de IA opera sob três diretrizes fundamentais de autonomia:
 
-Porém, **antes de criar qualquer commit (`git commit`), publicar no repositório remoto (`git push`) ou executar qualquer procedimento de deploy em produção**, o Agente de IA deve obrigatoriamente:
-
-1. **Desenvolvimento e Teste Local Conclusivo:** Concluir a implementação e validar 100% da solução no ambiente local ou de testes (garantindo ausência de erros de sintaxe, regressões funcionais ou quebras visuais).
-2. **Apresentação de Resumo:** Apresentar ao fundador um resumo claro, conciso e estruturado contendo:
-   - Os objetivos atendidos;
-   - Os arquivos modificados ou criados;
-   - Os resultados das validações e testes executados;
-   - As evidências de funcionamento;
-   - As ações subsequentes propostas (ex.: commit, push, deploy).
-3. **Solicitação Explícita de Autorização:** Formular expressamente a consulta de autorização antes de qualquer ação no controle de versão ou no ambiente remoto.
-4. **Parada Obrigatória de Execução:** Pausar a execução e aguardar a resposta do fundador. Fica terminantemente proibido realizar commits, `git push` ou deploys em produção sem a autorização prévia e expressa do fundador.
-
-Se qualquer teste local falhar, o avanço permanece bloqueado até a resolução completa da falha.
-
-### Autorização abrangente e simplificação do fluxo
-
-Quando o fundador conceder a autorização para uma proposta (por exemplo, autorizando implementar uma melhoria, comitar e realizar o deploy), **essa autorização é válida para todas as etapas expressamente inseridas no escopo autorizado**.
-
-Nesse cenário:
-- O Agente de IA **não deve pedir autorizações intermediárias** para etapas que já constavam da autorização geral (como pedir nova permissão apenas para rodar `git commit`, `git push` ou enviar os arquivos de deploy já autorizados).
-- A execução deve prosseguir de forma contínua e autônoma até a entrega completa das etapas aprovadas.
-- O Agente de IA deve pausar a execução e consultar o fundador apenas quando:
-  - Ocorrer um erro impeditivo ou falha imprevista;
-  - Houver necessidade de tomar uma decisão fora do escopo aprovado;
-  - Todas as etapas forem concluídas, momento em que apresentará o resumo final e as evidências de sucesso ao fundador.
+1. **Operações Somente Leitura:** Comandos e ações de leitura (inspecionar ambiente, ler documentos e código, consultar logs, verificar estados de repositórios, APIs e bancos de dados) possuem **autonomia total** e nunca exigem autorização ou confirmação prévia.
+2. **Execução Contínua para Objetivos Autorizados:** Quando o fundador solicita um objetivo, ajuste ou solução (ex.: corrigir um erro, implementar uma funcionalidade, criar automações), **toda a execução técnica necessária para atingir o objetivo com sucesso já é considerada autorizada de antemão**. O Agente de IA não deve pausar o fluxo para pedir permissões intermediárias ou operacionais ao longo do processo.
+3. **Salvaguardas para Commit, Push e Deploy (Resumo Prévio, Backup e Rollback):**
+   - **Resumo Prévio Obrigatório no Chat:** Antes de acionar qualquer solicitação de permissão do sistema, commit (`git commit`), envio remoto (`git push`) ou publicação em produção, a IA deve **obrigatoriamente apresentar no chat um resumo claro, conciso e estruturado** do que será realizado (arquivos envolvidos, alterações e impactos previstos). O fundador nunca deve receber uma tela de autorização sem antes ter lido o contexto e o resumo do que será feito.
+   - **Segurança Operacional:** Toda alteração que afete repositórios remotos ou servidores de produção deve assegurar mecanismos de backup prévio e capacidade imediata de rollback caso ocorra qualquer instabilidade.
+   - Estando o escopo do objetivo autorizado pelo fundador com resumo apresentado, a IA conduz o fluxo até a conclusão e validação final em produção com segurança, apresentando ao término o relatório com as evidências de sucesso.
+   - A IA deve pausar a execução e consultar o fundador **apenas** quando:
+     - Encontrar um erro bloqueante que fuja ao escopo do objetivo;
+     - Houver risco irreversível de perda de dados sem possibilidade de rollback;
+     - For necessária uma decisão de negócio ou direcionamento estratégico não definido.
 
 ---
 ## 5. Hierarquia de informações
@@ -217,7 +202,7 @@ Alterações locais existentes não devem ser descartadas sem autorização ou n
 
 Nenhuma convenção de commits, branches ou tags deve ser presumida quando não estiver homologada ou explicitamente definida para a tarefa ou repositório.
 
-Antes de realizar `git commit` ou `git push`, a IA deve obrigatoriamente apresentar um resumo das alterações ao fundador e obter autorização expressa para prosseguir.
+Commits e publicações remotas (`git push`) necessários para o atingimento do objetivo autorizado devem ser realizados com rastreabilidade, mensagens padronizadas e preservando a capacidade de rollback.
 
 ---
 
@@ -227,7 +212,7 @@ Cada projeto deve utilizar o procedimento de publicação definido em sua docume
 
 Regras gerais:
 
-- Nenhuma publicação ou deploy em produção deve ser executada sem a apresentação prévia do resumo das mudanças e a autorização explícita do fundador.
+- Publicações e deploys em produção de objetivos autorizados devem ser executados assegurando testes locais prévios, mecanismos de backup e capacidade imediata de rollback.
 - Parâmetros específicos de infraestrutura, como domínios, servidores, portas, usuários, diretórios e caminhos de publicação, devem permanecer na documentação do projeto correspondente.
 - Procedimentos operacionais específicos devem permanecer documentados no MOA ou na documentação técnica apropriada do projeto.
 - Publicações devem ser executadas somente dentro do escopo autorizado e conforme procedimento documentado.
