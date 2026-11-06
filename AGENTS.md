@@ -282,7 +282,7 @@ Contém os projetos e soluções da AllLogic Online.
 
 Projetos atualmente organizados neste diretório:
 
-- `matriz-saas/` — Plataforma e motor SaaS unificado (Agillex Hub, Atendimento, Agenda, CRM Kanban, Agillex Pay e Checkout).
+- `agillex-hub/` — Plataforma e motor SaaS unificado (Agillex Hub, Atendimento, Agenda, CRM Kanban, Agillex Pay e Checkout).
 - `agillex-atende/` — Solução e automações do Agilex Atende com Inteligência Artificial humanizada no WhatsApp.
 - `agillex-agenda/` — Aplicação base de agendamento online (integrada ao ecossistema Agillex).
 - `agillex-cobranca/` — Sistema de notificação ativa e régua inteligente de cobrança via WhatsApp integrada ao gateway Asaas.
